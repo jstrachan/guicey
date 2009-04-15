@@ -37,6 +37,8 @@ import com.google.inject.internal.Scoping;
 import com.google.inject.internal.SourceProvider;
 import com.google.inject.internal.ToStringBuilder;
 import com.google.inject.spi.BindingTargetVisitor;
+import com.google.inject.spi.CachedValue;
+import com.google.inject.spi.CachingProvider;
 import com.google.inject.spi.ConvertedConstantBinding;
 import com.google.inject.spi.Dependency;
 import com.google.inject.spi.InjectionPoint;
@@ -747,7 +749,7 @@ class InjectorImpl implements Injector, Lookups {
     final InternalFactory<? extends T> factory = getInternalFactory(key, errors);
     final Dependency<T> dependency = Dependency.get(key);
 
-    return new Provider<T>() {
+    return new CachingProvider<T>() {
       public T get() {
         final Errors errors = new Errors(dependency);
         try {
@@ -770,6 +772,15 @@ class InjectorImpl implements Injector, Lookups {
 
       @Override public String toString() {
         return factory.toString();
+      }
+
+      public T getCachedValue() {
+        if (factory instanceof CachedValue) {
+          @SuppressWarnings("unchecked")
+          CachedValue<T> cachedValue = (CachedValue<T>) factory;
+          return cachedValue.getCachedValue();
+        }
+        return null;
       }
     };
   }

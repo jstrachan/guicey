@@ -22,6 +22,7 @@ import com.google.inject.Provider;
 import com.google.inject.Scope;
 import com.google.inject.Scopes;
 import com.google.inject.Singleton;
+import com.google.inject.spi.CachingProvider;
 import com.google.inject.spi.DefaultBindingScopingVisitor;
 import java.lang.annotation.Annotation;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -43,7 +44,7 @@ public class ServletScopes {
   public static final Scope REQUEST = new Scope() {
     public <T> Provider<T> scope(Key<T> key, final Provider<T> creator) {
       final String name = key.toString();
-      return new Provider<T>() {
+      return new CachingProvider<T>() {
         public T get() {
           HttpServletRequest request = GuiceFilter.getRequest();
           synchronized (request) {
@@ -60,6 +61,15 @@ public class ServletScopes {
         public String toString() {
           return String.format("%s[%s]", creator, REQUEST);
         }
+
+        public T getCachedValue() {
+          HttpServletRequest request = GuiceFilter.getRequest();
+          synchronized (request) {
+            @SuppressWarnings("unchecked")
+            T t = (T) request.getAttribute(name);
+            return t;
+          }
+        }
       };
     }
 
@@ -74,7 +84,7 @@ public class ServletScopes {
   public static final Scope SESSION = new Scope() {
     public <T> Provider<T> scope(Key<T> key, final Provider<T> creator) {
       final String name = key.toString();
-      return new Provider<T>() {
+      return new CachingProvider<T>() {
         public T get() {
           HttpSession session = GuiceFilter.getRequest().getSession();
           synchronized (session) {
@@ -87,8 +97,18 @@ public class ServletScopes {
             return t;
           }
         }
+
         public String toString() {
           return String.format("%s[%s]", creator, SESSION);
+        }
+
+        public T getCachedValue() {
+          HttpSession session = GuiceFilter.getRequest().getSession();
+          synchronized (session) {
+            @SuppressWarnings("unchecked")
+            T t = (T) session.getAttribute(name);
+            return t;
+          }
         }
       };
     }

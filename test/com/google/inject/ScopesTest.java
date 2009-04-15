@@ -18,6 +18,7 @@ package com.google.inject;
 
 import static com.google.inject.Asserts.assertContains;
 import com.google.inject.internal.Maps;
+import com.google.inject.spi.CachingProvider;
 import java.io.IOException;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -28,6 +29,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import junit.framework.TestCase;
 
 /**
@@ -136,6 +138,44 @@ public class ScopesTest extends TestCase {
           "at " + A.class.getName() + ".class(ScopesTest.java:");
     }
   }
+
+
+  public void testIterateThroughSingletonValues() {
+    Injector injector = Guice.createInjector(singletonsModule);
+
+    Binding<BoundAsSingleton> binding1 = injector.getBinding(BoundAsSingleton.class);
+    Provider<BoundAsSingleton> provider1 = binding1.getProvider();
+    provider1.get();
+
+    boolean foundBoundAsSingleton = false;
+    boolean foundEagerSingleton = false;
+
+
+    // now lets iterate through all the objects
+    Set<Map.Entry<Key<?>,Binding<?>>> entries = injector.getBindings().entrySet();
+    for (Map.Entry<Key<?>, Binding<?>> entry : entries) {
+      Key<?> key = entry.getKey();
+      Binding<?> binding = entry.getValue();
+      Provider<?> provider = binding.getProvider();
+      if (provider instanceof CachingProvider<?>) {
+        CachingProvider<?> cachingProvider = (CachingProvider<?>) provider;
+        Object value = cachingProvider.getCachedValue();
+        if (value != null) {
+          if (value instanceof BoundAsSingleton) {
+            foundBoundAsSingleton = true;
+          }
+          else if (value instanceof EagerSingleton) { 
+            foundEagerSingleton = true;
+          }
+          //System.out.println("Key: " + key + " value " + value);
+        }
+      }
+    }
+
+    assertTrue("Should have found bound singleton instance", foundBoundAsSingleton);
+    assertTrue("Should have found eager singleton instance", foundEagerSingleton);
+  }
+
 
   @Singleton
   interface A {}

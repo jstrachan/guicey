@@ -22,6 +22,7 @@ import com.google.inject.internal.ErrorsException;
 import com.google.inject.internal.ImmutableList;
 import com.google.inject.internal.ImmutableSet;
 import com.google.inject.internal.InternalContext;
+import com.google.inject.spi.CachedValue;
 import com.google.inject.spi.InjectionPoint;
 import java.lang.reflect.InvocationTargetException;
 
@@ -31,7 +32,7 @@ import java.lang.reflect.InvocationTargetException;
  *
  * @author crazybob@google.com (Bob Lee)
  */
-class ConstructorInjector<T> {
+class ConstructorInjector<T> implements CachedValue<T> {
 
   private final ImmutableSet<InjectionPoint> injectableMembers;
   private final ImmutableList<SingleParameterInjector<?>> parameterInjectors;
@@ -51,6 +52,11 @@ class ConstructorInjector<T> {
 
   public ImmutableSet<InjectionPoint> getInjectableMembers() {
     return injectableMembers;
+  }
+
+  public T getCachedValue() {
+    // TODO
+    return null; //constructionProxy.getCachedValue();
   }
 
   ConstructionProxy<T> getConstructionProxy() {

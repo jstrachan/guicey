@@ -19,6 +19,7 @@ package com.google.inject;
 import com.google.inject.internal.Errors;
 import com.google.inject.internal.InternalFactory;
 import com.google.inject.internal.Scoping;
+import com.google.inject.spi.CachingProvider;
 import java.lang.annotation.Annotation;
 
 /**
@@ -35,7 +36,7 @@ public class Scopes {
    */
   public static final Scope SINGLETON = new Scope() {
     public <T> Provider<T> scope(Key<T> key, final Provider<T> creator) {
-      return new Provider<T>() {
+      return new CachingProvider<T>() {
 
         private volatile T instance;
 
@@ -55,6 +56,10 @@ public class Scopes {
               }
             }
           }
+          return instance;
+        }
+
+        public T getCachedValue() {
           return instance;
         }
 

@@ -26,6 +26,7 @@ import static com.google.inject.internal.Preconditions.checkState;
 import com.google.inject.internal.Scoping;
 import com.google.inject.internal.ToStringBuilder;
 import com.google.inject.spi.BindingTargetVisitor;
+import com.google.inject.spi.CachedValue;
 import com.google.inject.spi.ConstructorBinding;
 import com.google.inject.spi.Dependency;
 import com.google.inject.spi.InjectionPoint;
@@ -98,7 +99,7 @@ class ConstructorBindingImpl<T> extends BindingImpl<T> implements ConstructorBin
         .toString();
   }
 
-  private static class Factory<T> implements InternalFactory<T> {
+  private static class Factory<T> implements InternalFactory<T>, CachedValue<T> {
     private ConstructorInjector<T> constructorInjector;
 
     @SuppressWarnings("unchecked")
@@ -109,6 +110,10 @@ class ConstructorBindingImpl<T> extends BindingImpl<T> implements ConstructorBin
       // This may not actually be safe because it could return a super type of T (if that's all the
       // client needs), but it should be OK in practice thanks to the wonders of erasure.
       return (T) constructorInjector.construct(errors, context, dependency.getKey().getRawType());
+    }
+
+    public T getCachedValue() {
+      return constructorInjector.getCachedValue();
     }
   }
 }

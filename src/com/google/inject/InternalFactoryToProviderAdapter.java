@@ -22,12 +22,13 @@ import com.google.inject.internal.InternalContext;
 import com.google.inject.internal.InternalFactory;
 import static com.google.inject.internal.Preconditions.checkNotNull;
 import com.google.inject.internal.SourceProvider;
+import com.google.inject.spi.CachedValue;
 import com.google.inject.spi.Dependency;
 
 /**
  * @author crazybob@google.com (Bob Lee)
 */
-class InternalFactoryToProviderAdapter<T> implements InternalFactory<T> {
+class InternalFactoryToProviderAdapter<T> implements InternalFactory<T>, CachedValue<T> {
 
   private final Initializable<Provider<? extends T>> initializable;
   private final Object source;
@@ -53,5 +54,20 @@ class InternalFactoryToProviderAdapter<T> implements InternalFactory<T> {
 
   @Override public String toString() {
     return initializable.toString();
+  }
+
+  public T getCachedValue() {
+    try {
+      Provider<? extends T> provider = initializable.get(new Errors(this));
+      if (provider instanceof CachedValue) {
+        @SuppressWarnings("unchecked")
+        CachedValue<T> cachedValue = (CachedValue<T>) provider;
+        return cachedValue.getCachedValue();
+      }
+    }
+    catch (ErrorsException e) {
+      // ignore
+    }
+    return null;
   }
 }
