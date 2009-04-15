@@ -16,7 +16,6 @@
 
 package com.google.inject.internal;
 
-import static com.google.inject.internal.Preconditions.checkNotNull;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Member;
 import java.lang.reflect.Method;
@@ -59,7 +58,9 @@ public final class BytecodeGen {
 
   private static final Logger logger = Logger.getLogger(BytecodeGen.class.getName());
 
-  static final ClassLoader GUICE_CLASS_LOADER = BytecodeGen.class.getClassLoader();
+  static final ClassLoader GUICE_CLASS_LOADER = canonicalize(BytecodeGen.class.getClassLoader());
+
+  static final Object NULL_CLASS_LOADER_KEY = new Object();
 
   /** ie. "com.google.inject.internal" */
   private static final String GUICE_INTERNAL_PACKAGE
@@ -82,17 +83,17 @@ public final class BytecodeGen {
   end[NO_AOP]*/
 
   /** Use "-Dguice.custom.loader=false" to disable custom classloading. */
-  static final boolean HOOK_ENABLED
-      = "true".equals(System.getProperty("guice.custom.loader", "true"));
+  static final String CUSTOM_LOADER_SETTING = System.getProperty("guice.custom.loader", "true");
 
   /**
    * Weak cache of bridge class loaders that make the Guice implementation
    * classes visible to various code-generated proxies of client classes.
    */
-  private static final Map<ClassLoader, ClassLoader> CLASS_LOADER_CACHE
+  private static final Map<Object, ClassLoader> CLASS_LOADER_CACHE
       = new MapMaker().weakKeys().weakValues().makeComputingMap(
-          new Function<ClassLoader, ClassLoader>() {
-    public ClassLoader apply(final @Nullable ClassLoader typeClassLoader) {
+          new Function<Object, ClassLoader>() {
+    public ClassLoader apply(@Nullable Object classLoaderKey) {
+      final ClassLoader typeClassLoader = getClassLoaderFromKey(classLoaderKey);
       logger.fine("Creating a bridge ClassLoader for " + typeClassLoader);
       return AccessController.doPrivileged(new PrivilegedAction<ClassLoader>() {
         public ClassLoader run() {
@@ -104,25 +105,36 @@ public final class BytecodeGen {
 
   /**
    * For class loaders, {@code null}, is always an alias to the
-   * {@link ClassLoader#getSystemClassLoader() system class loader}. This method
-   * will not return null.
+   * {@link ClassLoader#getSystemClassLoader() system class loader}.
    */
   private static ClassLoader canonicalize(ClassLoader classLoader) {
-    return classLoader != null
-        ? classLoader
-        : checkNotNull(getSystemClassLoaderOrNull(), "Couldn't get a ClassLoader");
+    if (classLoader != null) {
+      return classLoader;
+    }
+
+    try {
+      return AccessController.doPrivileged(new PrivilegedAction<ClassLoader>() {
+        public ClassLoader run() {
+          return ClassLoader.getSystemClassLoader();
+        }
+      });
+    } catch (SecurityException e) {
+      return null; // unable to canonicalize
+    }
   }
 
   /**
-   * Returns the system classloader, or {@code null} if we don't have
-   * permission.
+   * Returns a non-null key for the given class loader.
    */
-  private static ClassLoader getSystemClassLoaderOrNull() {
-    try {
-      return ClassLoader.getSystemClassLoader();
-    } catch (SecurityException e) {
-      return null;
-    }
+  private static Object getKeyFromClassLoader(ClassLoader classLoader) {
+    return classLoader != null ? classLoader : NULL_CLASS_LOADER_KEY;
+  }
+
+  /**
+   * Returns the class loader related to the given key.
+   */
+  private static ClassLoader getClassLoaderFromKey(Object key) {
+    return key != NULL_CLASS_LOADER_KEY ? (ClassLoader)key : null;
   }
 
   /**
@@ -133,10 +145,14 @@ public final class BytecodeGen {
   }
 
   private static ClassLoader getClassLoader(Class<?> type, ClassLoader delegate) {
+    if ("FALSE".equalsIgnoreCase(CUSTOM_LOADER_SETTING)) {
+      return delegate;
+    }
+
     delegate = canonicalize(delegate);
 
-    // if the application is running in the System classloader, assume we can run there too
-    if (delegate == getSystemClassLoaderOrNull()) {
+    // simple case, we're running in the same class-space
+    if (GUICE_CLASS_LOADER == delegate && !"EAGER".equalsIgnoreCase(CUSTOM_LOADER_SETTING)) {
       return delegate;
     }
 
@@ -145,8 +161,8 @@ public final class BytecodeGen {
       return delegate;
     }
 
-    if (HOOK_ENABLED && Visibility.forType(type) == Visibility.PUBLIC) {
-      return CLASS_LOADER_CACHE.get(delegate);
+    if (Visibility.forType(type) == Visibility.PUBLIC) {
+      return CLASS_LOADER_CACHE.get(getKeyFromClassLoader(delegate));
     }
 
     return delegate;
