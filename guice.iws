@@ -1,127 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project relativePaths="false" version="4">
   <component name="ChangeListManager">
-    <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extensions/assistedinject/src/com/google/inject/assistedinject/FactoryProvider.java" afterPath="$PROJECT_DIR$/extensions/assistedinject/src/com/google/inject/assistedinject/FactoryProvider.java" />
+    <list default="true" name="Default" comment="applied patch 337">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common.xml" afterPath="$PROJECT_DIR$/common.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/guice.iws" afterPath="$PROJECT_DIR$/guice.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/extensions/assistedinject/src/com/google/inject/assistedinject/FactoryProvider2.java" afterPath="$PROJECT_DIR$/extensions/assistedinject/src/com/google/inject/assistedinject/FactoryProvider2.java" />
     </list>
-    <ignored path="servlet/build/classes/com/google/inject/servlet/ServletScopes$3.class" />
-    <ignored path="extensions/throwingproviders/build/classes/com/google/inject/throwingproviders/ThrowingProviderBinder.class" />
-    <ignored path="extensions/assistedinject/build/classes/com/google/inject/assistedinject/FactoryProvider2$2.class" />
-    <ignored path="extensions/throwingproviders/build/classes/com/google/inject/throwingproviders/ThrowingProvider.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/ServletsModuleBuilder.class" />
+    <ignored path="extensions/assistedinject/build/classes/com/google/inject/assistedinject/ParameterListKey.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/ServletScopes$2.class" />
+    <ignored path="spring/build/guice-spring-with-deps.jar" />
+    <ignored path="extensions/multibindings/build/classes/com/google/inject/multibindings/MapBinder$1.class" />
+    <ignored path="extensions/multibindings/build/classes/com/google/inject/multibindings/Multibinder$RealMultibinder.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/ManagedFilterPipeline.class" />
+    <ignored path="servlet/build/classes.bar" />
+    <ignored path="struts2/plugin/build/classes.bar" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/FilterChainInvocation.class" />
+    <ignored path="extensions/assistedinject/build/classes.bar" />
+    <ignored path="extensions/multibindings/build/classes/com/google/inject/multibindings/MapBinder.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/RequestScoped.class" />
+    <ignored path="extensions/multibindings/build/guice-multibindings-snapshot-src.jar" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/InternalServletModule.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/ManagedFilterPipeline$1.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/SessionScoped.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/ServletModule$FilterKeyBindingBuilder.class" />
+    <ignored path="extensions/multibindings/build/classes/com/google/inject/multibindings/Element.class" />
+    <ignored path="extensions/assistedinject/build/classes/com/google/inject/assistedinject/FactoryProvider2.class" />
+    <ignored path="extensions/multibindings/build/classes/com/google/inject/multibindings/Multibinder.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/ServletDefinition$2.class" />
+    <ignored path="struts2/plugin/build/guice-struts2-plugin-with-deps.jar" />
+    <ignored path="struts2/plugin/build/classes/com/google/inject/struts2/GuiceObjectFactory.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/RequestParameters.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/FilterPipeline.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/FiltersModuleBuilder$1.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/GuiceFilter$Context.class" />
+    <ignored path="struts2/plugin/build/classes/com/google/inject/struts2/GuiceObjectFactory$1.class" />
     <ignored path="extensions/assistedinject/build/guice-assistedinject-snapshot-src.jar" />
     <ignored path="extensions/assistedinject/build/guice-assistedinject-snapshot.jar" />
-    <ignored path="extensions/assistedinject/build/classes/com/google/inject/assistedinject/FactoryProvider2$1.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/GuiceFilter$Context.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/FiltersModuleBuilder$FilterKeyBindingBuilderImpl.class" />
-    <ignored path="extensions/assistedinject/build/classes/com/google/inject/assistedinject/AssistedConstructor.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/InternalServletModule.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/InternalServletModule$1.class" />
+    <ignored path="extensions/throwingproviders/build/guice-throwingproviders-snapshot-src.jar" />
     <ignored path="servlet/build/classes/com/google/inject/servlet/ManagedServletPipeline.class" />
-    <ignored path="extensions/multibindings/build/classes/com/google/inject/multibindings/RealElement.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/ServletsModuleBuilder$ServletKeyBindingBuilderImpl.class" />
-    <ignored path="extensions/assistedinject/build/classes.bar" />
-    <ignored path="struts2/plugin/build/classes/com/google/inject/struts2/GuiceObjectFactory$1.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/FiltersModuleBuilder$1.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/DefaultFilterPipeline.class" />
-    <ignored path="extensions/assistedinject/build/classes/com/google/inject/assistedinject/FactoryProvider$1.class" />
-    <ignored path="extensions/assistedinject/build/classes/com/google/inject/assistedinject/ParameterListKey.class" />
-    <ignored path=".idea/workspace.xml" />
-    <ignored path="extensions/throwingproviders/build/classes/com/google/inject/throwingproviders/ThrowingProviderBinder$SecondaryBinder$1.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/GuiceFilter.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/FilterDefinition$1.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/ManagedServletPipeline$2.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/GuiceServletContextListener.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/UriPatternType$ServletStyleUriPatternMatcher.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/FiltersModuleBuilder.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/ServletsModuleBuilder.class" />
-    <ignored path="spring/build/META-INF/MANIFEST.MF" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/ServletModule$FilterKeyBindingBuilder.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/SessionScoped.class" />
-    <ignored path="spring/build/classes/com/google/inject/spring/SpringIntegration$InjectableSpringProvider.class" />
-    <ignored path="extensions/assistedinject/build/META-INF/MANIFEST.MF" />
-    <ignored path="struts2/plugin/build/classes/struts-plugin.xml" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/ManagedServletPipeline$1.class" />
-    <ignored path="extensions/multibindings/build/classes/com/google/inject/multibindings/Element.class" />
-    <ignored path="struts2/plugin/build/guice-struts2-plugin-snapshot.jar" />
-    <ignored path="extensions/multibindings/build/classes/com/google/inject/multibindings/MapBinder$RealMapBinder.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/InternalServletModule$5.class" />
-    <ignored path="extensions/multibindings/build/classes.bar" />
-    <ignored path="servlet/build/guice-servlet-with-deps.jar" />
-    <ignored path="servlet/build/guice-servlet-snapshot-src.jar" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/InternalServletModule$3.class" />
     <ignored path="servlet/build/classes/com/google/inject/servlet/ServletsModuleBuilder$1.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/ServletScopes$2$1.class" />
-    <ignored path="spring/build/classes/com/google/inject/spring/SpringIntegration.class" />
-    <ignored path="struts2/plugin/build/guice-struts2-plugin-with-deps.jar" />
-    <ignored path="struts2/plugin/build/classes/com/google/inject/struts2/GuiceObjectFactory$ProvidedInterceptor.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/InternalServletModule$6.class" />
-    <ignored path="extensions/multibindings/build/classes/com/google/inject/multibindings/Multibinder.class" />
-    <ignored path="extensions/throwingproviders/build/classes/com/google/inject/throwingproviders/ThrowingProviderBinder$Result.class" />
-    <ignored path="struts2/plugin/build/classes/com/google/inject/struts2/GuiceObjectFactory.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/UriPatternMatcher.class" />
-    <ignored path="extensions/multibindings/build/guice-multibindings-with-deps.jar" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/ServletDefinition$1.class" />
-    <ignored path="extensions/multibindings/build/guice-multibindings-snapshot.jar" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/FilterChainInvocation.class" />
-    <ignored path="struts2/plugin/build/classes.bar" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/UriPatternType$RegexUriPatternMatcher.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/FilterDefinition.class" />
-    <ignored path="extensions/multibindings/build/classes/com/google/inject/multibindings/MapBinder$RealMapBinder$2.class" />
-    <ignored path="spring/build/guice-spring-with-deps.jar" />
-    <ignored path="extensions/assistedinject/build/classes/com/google/inject/assistedinject/Parameter.class" />
-    <ignored path="extensions/assistedinject/build/classes/com/google/inject/assistedinject/FactoryProvider.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/ManagedFilterPipeline.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/ServletScopes.class" />
-    <ignored path="extensions/throwingproviders/build/classes/com/google/inject/throwingproviders/ThrowingProviderBinder$SecondaryBinder.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/RequestScoped.class" />
-    <ignored path="extensions/multibindings/build/classes/com/google/inject/multibindings/MapBinder$1.class" />
-    <ignored path="servlet/build/classes.bar" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/RequestParameters.class" />
-    <ignored path="extensions/assistedinject/build/classes/com/google/inject/assistedinject/Assisted.class" />
-    <ignored path="guice.iws" />
-    <ignored path="spring/build/classes/com/google/inject/spring/SpringIntegration$SpringProvider.class" />
-    <ignored path="extensions/assistedinject/build/guice-assistedinject-with-deps.jar" />
-    <ignored path="extensions/assistedinject/build/classes/com/google/inject/assistedinject/AssistedInject.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/ServletModule.class" />
-    <ignored path="extensions/multibindings/build/META-INF/MANIFEST.MF" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/ServletScopes$2.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/UriPatternType$1.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/InternalServletModule$4.class" />
+    <ignored path="extensions/assistedinject/build/classes/com/google/inject/assistedinject/FactoryProvider2$2.class" />
     <ignored path="extensions/multibindings/build/classes/com/google/inject/multibindings/MapBinder$RealMapBinder$1.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/ServletModule$ServletKeyBindingBuilder.class" />
-    <ignored path="extensions/assistedinject/build/classes/com/google/inject/assistedinject/FactoryProvider2.class" />
-    <ignored path="extensions/throwingproviders/build/META-INF/MANIFEST.MF" />
-    <ignored path="servlet/build/guice-servlet-snapshot.jar" />
+    <ignored path="extensions/multibindings/build/classes.bar" />
+    <ignored path="extensions/throwingproviders/build/classes.bar" />
+    <ignored path="extensions/throwingproviders/build/guice-throwingproviders-snapshot.jar" />
+    <ignored path="struts2/plugin/build/guice-struts2-plugin-snapshot.jar" />
+    <ignored path="spring/build/classes/com/google/inject/spring/SpringIntegration.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/GuiceServletContextListener.class" />
     <ignored path="servlet/build/classes/com/google/inject/servlet/ServletScopes$1.class" />
     <ignored path="spring/build/guice-spring-snapshot-src.jar" />
-    <ignored path="extensions/throwingproviders/build/classes/com/google/inject/throwingproviders/ThrowingProviderBinder$SecondaryBinder$2.class" />
-    <ignored path="extensions/throwingproviders/build/classes.bar" />
-    <ignored path="extensions/multibindings/build/classes/com/google/inject/multibindings/MapBinder$RealMapBinder$MapEntry.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/ServletDefinition$2.class" />
-    <ignored path="extensions/throwingproviders/build/guice-throwingproviders-snapshot.jar" />
-    <ignored path="spring/build/classes.bar" />
-    <ignored path="extensions/throwingproviders/build/classes/com/google/inject/throwingproviders/ThrowingProviderBinder$SecondaryBinder$1$1.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/InternalServletModule$2.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/ManagedFilterPipeline$1.class" />
-    <ignored path="servlet/build/META-INF/MANIFEST.MF" />
     <ignored path="servlet/build/classes/com/google/inject/servlet/UriPatternType$ServletStyleUriPatternMatcher$Kind.class" />
-    <ignored path="extensions/throwingproviders/build/guice-throwingproviders-snapshot-src.jar" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/UriPatternType.class" />
-    <ignored path="extensions/multibindings/build/classes/com/google/inject/multibindings/Multibinder$RealMultibinder.class" />
-    <ignored path="extensions/throwingproviders/build/guice-throwingproviders-with-deps.jar" />
-    <ignored path="extensions/multibindings/build/guice-multibindings-snapshot-src.jar" />
-    <ignored path="extensions/multibindings/build/classes/com/google/inject/multibindings/Multibinder$1.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/GuiceFilter.class" />
     <ignored path="servlet/build/classes/com/google/inject/servlet/ServletScopes$1$1.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/InternalServletModule$4.class" />
-    <ignored path="extensions/multibindings/build/classes/com/google/inject/multibindings/MapBinder.class" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/ServletDefinition.class" />
-    <ignored path="struts2/plugin/build/guice-struts2-plugin-snapshot-src.jar" />
-    <ignored path="servlet/build/classes/com/google/inject/servlet/FilterPipeline.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/UriPatternType$RegexUriPatternMatcher.class" />
+    <ignored path="extensions/assistedinject/build/guice-assistedinject-with-deps.jar" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/UriPatternType$ServletStyleUriPatternMatcher.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/InternalServletModule$1.class" />
+    <ignored path="extensions/multibindings/build/guice-multibindings-with-deps.jar" />
+    <ignored path="spring/build/META-INF/MANIFEST.MF" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/ServletDefinition$1.class" />
+    <ignored path="servlet/build/guice-servlet-snapshot-src.jar" />
+    <ignored path="struts2/plugin/build/classes/struts-plugin.xml" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/UriPatternMatcher.class" />
+    <ignored path="extensions/multibindings/build/classes/com/google/inject/multibindings/Multibinder$1.class" />
+    <ignored path="extensions/throwingproviders/build/guice-throwingproviders-with-deps.jar" />
+    <ignored path="servlet/build/META-INF/MANIFEST.MF" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/ServletsModuleBuilder$ServletKeyBindingBuilderImpl.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/FilterDefinition.class" />
+    <ignored path="extensions/assistedinject/build/META-INF/MANIFEST.MF" />
     <ignored path="servlet/build/classes/com/google/inject/servlet/ManagedFilterPipeline$2.class" />
-    <ignored path="struts2/plugin/build/META-INF/MANIFEST.MF" />
+    <ignored path="extensions/multibindings/build/guice-multibindings-snapshot.jar" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/ServletDefinition.class" />
+    <ignored path="extensions/assistedinject/build/classes/com/google/inject/assistedinject/FactoryProvider2$1.class" />
+    <ignored path="extensions/throwingproviders/build/classes/com/google/inject/throwingproviders/ThrowingProviderBinder$SecondaryBinder.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/InternalServletModule$6.class" />
+    <ignored path="extensions/assistedinject/build/classes/com/google/inject/assistedinject/FactoryProvider$1.class" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path="extensions/multibindings/build/META-INF/MANIFEST.MF" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/ServletModule$ServletKeyBindingBuilder.class" />
     <ignored path="spring/build/guice-spring-snapshot.jar" />
+    <ignored path="struts2/plugin/build/classes/com/google/inject/struts2/GuiceObjectFactory$ProvidedInterceptor.class" />
+    <ignored path="extensions/assistedinject/build/classes/com/google/inject/assistedinject/Parameter.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/InternalServletModule$3.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/ServletScopes$2$1.class" />
+    <ignored path="extensions/throwingproviders/build/classes/com/google/inject/throwingproviders/ThrowingProviderBinder$SecondaryBinder$1.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/UriPatternType.class" />
+    <ignored path="extensions/assistedinject/build/classes/com/google/inject/assistedinject/AssistedConstructor.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/ManagedServletPipeline$2.class" />
+    <ignored path="spring/build/classes.bar" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/InternalServletModule$5.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/FilterDefinition$1.class" />
+    <ignored path="extensions/assistedinject/build/classes/com/google/inject/assistedinject/AssistedInject.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/DefaultFilterPipeline.class" />
+    <ignored path="servlet/build/guice-servlet-with-deps.jar" />
+    <ignored path="extensions/throwingproviders/build/classes/com/google/inject/throwingproviders/ThrowingProviderBinder$Result.class" />
+    <ignored path="extensions/multibindings/build/classes/com/google/inject/multibindings/RealElement.class" />
+    <ignored path="extensions/multibindings/build/classes/com/google/inject/multibindings/MapBinder$RealMapBinder.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/ManagedServletPipeline$1.class" />
+    <ignored path="struts2/plugin/build/guice-struts2-plugin-snapshot-src.jar" />
+    <ignored path="extensions/multibindings/build/classes/com/google/inject/multibindings/MapBinder$RealMapBinder$2.class" />
+    <ignored path="extensions/multibindings/build/classes/com/google/inject/multibindings/MapBinder$RealMapBinder$MapEntry.class" />
+    <ignored path="extensions/assistedinject/build/classes/com/google/inject/assistedinject/Assisted.class" />
+    <ignored path="guice.iws" />
+    <ignored path="extensions/throwingproviders/build/classes/com/google/inject/throwingproviders/ThrowingProvider.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/ServletScopes$3.class" />
+    <ignored path="servlet/build/guice-servlet-snapshot.jar" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/UriPatternType$1.class" />
+    <ignored path="spring/build/classes/com/google/inject/spring/SpringIntegration$SpringProvider.class" />
+    <ignored path="extensions/throwingproviders/build/classes/com/google/inject/throwingproviders/ThrowingProviderBinder.class" />
+    <ignored path="extensions/throwingproviders/build/META-INF/MANIFEST.MF" />
+    <ignored path="extensions/throwingproviders/build/classes/com/google/inject/throwingproviders/ThrowingProviderBinder$SecondaryBinder$1$1.class" />
+    <ignored path="spring/build/classes/com/google/inject/spring/SpringIntegration$InjectableSpringProvider.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/FiltersModuleBuilder$FilterKeyBindingBuilderImpl.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/InternalServletModule$2.class" />
+    <ignored path="extensions/throwingproviders/build/classes/com/google/inject/throwingproviders/ThrowingProviderBinder$SecondaryBinder$2.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/ServletModule.class" />
+    <ignored path="struts2/plugin/build/META-INF/MANIFEST.MF" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/FiltersModuleBuilder.class" />
+    <ignored path="extensions/assistedinject/build/classes/com/google/inject/assistedinject/FactoryProvider.class" />
+    <ignored path="servlet/build/classes/com/google/inject/servlet/ServletScopes.class" />
   </component>
   <component name="ChangesViewManager" flattened_view="false" show_ignored="false" />
   <component name="Commander">
@@ -177,37 +175,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="deployToGuiceyFruit.sh" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/deployToGuiceyFruit.sh">
+      <file leaf-file-name="build.properties" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="44" selection-start="353" selection-end="353" vertical-scroll-proportion="0.0">
+            <state line="22" column="0" selection-start="867" selection-end="867" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BytecodeGen.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/google/inject/internal/BytecodeGen.java">
+      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="42" column="60" selection-start="1868" selection-end="1868" vertical-scroll-proportion="35.94737">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
+      <file leaf-file-name="common.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/common.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="66" selection-start="538" selection-end="538" vertical-scroll-proportion="0.14150943">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="releaseToGuiceyFruit.sh" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/releaseToGuiceyFruit.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="44" selection-start="730" selection-end="730" vertical-scroll-proportion="0.0">
+            <state line="93" column="68" selection-start="3641" selection-end="3641" vertical-scroll-proportion="0.61145705">
               <folding />
             </state>
           </provider>
@@ -475,7 +464,7 @@
     <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="added the patch suggested by Richard to use the correct Guice jar with OSGi headers added" />
+    <option name="LAST_COMMIT_MESSAGE" value="applied latest patch for http://code.google.com/p/google-guice/issues/detail?id=337" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -490,6 +479,7 @@
     <MESSAGE value="used the right markdown syntax :)" />
     <MESSAGE value="applied patch for http://code.google.com/p/google-guice/issues/detail?id=354" />
     <MESSAGE value="added the patch suggested by Richard to use the correct Guice jar with OSGi headers added" />
+    <MESSAGE value="applied latest patch for http://code.google.com/p/google-guice/issues/detail?id=337" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -565,20 +555,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/google/inject/spi/HasDependencies.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="17" selection-start="910" selection-end="910" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/google/inject/spi/ConstructorBinding.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="50" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/google/inject/spi/BindingScopingVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="44" selection-start="1130" selection-end="1130" vertical-scroll-proportion="0.0">
@@ -646,9 +622,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.properties">
+    <entry file="file://$PROJECT_DIR$/deployToGuiceyFruit.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="867" selection-end="867" vertical-scroll-proportion="0.0">
+        <state line="11" column="44" selection-start="353" selection-end="353" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -656,13 +632,6 @@
     <entry file="file://$PROJECT_DIR$/src/com/google/inject/internal/BytecodeGen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/deployToGuiceyFruit.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="44" selection-start="353" selection-end="353" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -676,7 +645,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="66" selection-start="538" selection-end="538" vertical-scroll-proportion="0.14150943">
+        <state line="11" column="0" selection-start="602" selection-end="602" vertical-scroll-proportion="0.15566038">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="867" selection-end="867" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="60" selection-start="1868" selection-end="1868" vertical-scroll-proportion="35.94737">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="68" selection-start="3641" selection-end="3641" vertical-scroll-proportion="0.61145705">
           <folding />
         </state>
       </provider>

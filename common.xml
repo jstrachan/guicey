@@ -43,7 +43,12 @@
     <property name="api.range" value="&quot;[${api.version},${version;+;${api.version}})&quot;"/>
     <property name="guice.imports" value="com.google.inject.*;version=${api.range}"/>
     <property name="Import-Package" value="${exclude.imports},${guice.imports},*;resolution:=optional"/>
+<!--
+  TODO Lets expose internal so that we don't have to use Fragments in GuiceyFruit
+
     <property name="Export-Package" value="!${module}.internal.*,${module}.*;version=${api.version}"/>
+-->
+    <property name="Export-Package" value="${module}.*;version=${api.version}"/>
 
     <property name="-removeheaders" value="Bnd-LastModified,Ignore-Package,Include-Resource,Private-Package,Tool"/>
 
