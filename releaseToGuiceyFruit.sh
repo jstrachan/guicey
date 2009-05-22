@@ -8,7 +8,7 @@ mvn deploy:deploy-file -DgroupId=org.guiceyfruit \
         -Dpackaging=jar \
         -DrepositoryId=guiceyfruit-release \
         -Durl=file:///java-workspace/guiceyfruit-releases \
-                  -Dfile=build/dist/guice-snapshot.jar
+                  -Dfile=build/dist/guice-2.0.jar
 
 mvn deploy:deploy-file -DgroupId=org.guiceyfruit \
   -DartifactId=guice-servlet \
