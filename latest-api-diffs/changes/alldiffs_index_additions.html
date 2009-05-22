@@ -88,6 +88,9 @@ All Additions Index
 </A></nobr><br>
 <!-- Class AnnotatedElementBuilder -->
 <A HREF="pkg_com.google.inject.binder.html#AnnotatedElementBuilder" class="hiddenlink" target="rightframe"><b><i>AnnotatedElementBuilder</i></b></A><br>
+<!-- Method applyTo -->
+<nobr><A HREF="com.google.inject.spi.Message.html#com.google.inject.spi.Message.applyTo_added(com.google.inject.Binder)" class="hiddenlink" target="rightframe"><b>applyTo</b>
+(<code>Binder</code>)</A></nobr><br>
 <!-- Class BindingScopingVisitor -->
 <A NAME="B"></A>
 <br><font size="+2">B</font>&nbsp;
@@ -114,6 +117,15 @@ All Additions Index
 <A HREF="pkg_com.google.inject.spi.html#BindingScopingVisitor" class="hiddenlink" target="rightframe"><b><i>BindingScopingVisitor</i></b></A><br>
 <!-- Class BindingTargetVisitor -->
 <A HREF="pkg_com.google.inject.spi.html#BindingTargetVisitor" class="hiddenlink" target="rightframe"><b><i>BindingTargetVisitor</i></b></A><br>
+<!-- Method bindListener -->
+<i>bindListener</i><br>
+&nbsp;&nbsp;<nobr><A HREF="com.google.inject.AbstractModule.html#com.google.inject.AbstractModule.bindListener_added(com.google.inject.matcher.Matcher<? super com.google.inject.TypeLiteral<?>>, com.google.inject.spi.TypeListener)" class="hiddenlink" target="rightframe">type&nbsp;<b>
+(<code>Matcher&lt;TypeLiteral&lt;?&gt;&gt;, TypeListener</code>)</b>&nbsp;in&nbsp;com.google.inject.AbstractModule
+</A></nobr><br>
+<!-- Method bindListener -->
+&nbsp;&nbsp;<nobr><A HREF="com.google.inject.Binder.html#com.google.inject.Binder.bindListener_added(com.google.inject.matcher.Matcher<? super com.google.inject.TypeLiteral<?>>, com.google.inject.spi.TypeListener)" class="hiddenlink" target="rightframe">type&nbsp;<b>
+(<code>Matcher&lt;TypeLiteral&lt;?&gt;&gt;, TypeListener</code>)</b>&nbsp;in&nbsp;com.google.inject.Binder
+</A></nobr><br>
 <!-- Package com.google.inject.assistedinject -->
 <A NAME="C"></A>
 <A HREF="changes-summary.html#com.google.inject.assistedinject" class="hiddenlink" target="rightframe"><b>com.google.inject.assistedinject</b></A><br>
@@ -286,6 +298,31 @@ All Additions Index
 <!-- Method getFieldType -->
 <nobr><A HREF="com.google.inject.TypeLiteral.html#com.google.inject.TypeLiteral.getFieldType_added(java.lang.reflect.Field)" class="hiddenlink" target="rightframe"><b>getFieldType</b>
 (<code>Field</code>)</A></nobr><br>
+<!-- Method getMembersInjector -->
+<i>getMembersInjector</i><br>
+&nbsp;&nbsp;<nobr><A HREF="com.google.inject.AbstractModule.html#com.google.inject.AbstractModule.getMembersInjector_added(com.google.inject.TypeLiteral<T>)" class="hiddenlink" target="rightframe">type&nbsp;<b>
+(<code>TypeLiteral&lt;T&gt;</code>)</b>&nbsp;in&nbsp;com.google.inject.AbstractModule
+</A></nobr><br>
+<!-- Method getMembersInjector -->
+&nbsp;&nbsp;<nobr><A HREF="com.google.inject.AbstractModule.html#com.google.inject.AbstractModule.getMembersInjector_added(java.lang.Class<T>)" class="hiddenlink" target="rightframe">type&nbsp;<b>
+(<code>Class&lt;T&gt;</code>)</b>&nbsp;in&nbsp;com.google.inject.AbstractModule
+</A></nobr><br>
+<!-- Method getMembersInjector -->
+&nbsp;&nbsp;<nobr><A HREF="com.google.inject.Binder.html#com.google.inject.Binder.getMembersInjector_added(com.google.inject.TypeLiteral<T>)" class="hiddenlink" target="rightframe">type&nbsp;<b>
+(<code>TypeLiteral&lt;T&gt;</code>)</b>&nbsp;in&nbsp;com.google.inject.Binder
+</A></nobr><br>
+<!-- Method getMembersInjector -->
+&nbsp;&nbsp;<nobr><A HREF="com.google.inject.Binder.html#com.google.inject.Binder.getMembersInjector_added(java.lang.Class<T>)" class="hiddenlink" target="rightframe">type&nbsp;<b>
+(<code>Class&lt;T&gt;</code>)</b>&nbsp;in&nbsp;com.google.inject.Binder
+</A></nobr><br>
+<!-- Method getMembersInjector -->
+&nbsp;&nbsp;<nobr><A HREF="com.google.inject.Injector.html#com.google.inject.Injector.getMembersInjector_added(com.google.inject.TypeLiteral<T>)" class="hiddenlink" target="rightframe">type&nbsp;<b>
+(<code>TypeLiteral&lt;T&gt;</code>)</b>&nbsp;in&nbsp;com.google.inject.Injector
+</A></nobr><br>
+<!-- Method getMembersInjector -->
+&nbsp;&nbsp;<nobr><A HREF="com.google.inject.Injector.html#com.google.inject.Injector.getMembersInjector_added(java.lang.Class<T>)" class="hiddenlink" target="rightframe">type&nbsp;<b>
+(<code>Class&lt;T&gt;</code>)</b>&nbsp;in&nbsp;com.google.inject.Injector
+</A></nobr><br>
 <!-- Method getParameterTypes -->
 <nobr><A HREF="com.google.inject.TypeLiteral.html#com.google.inject.TypeLiteral.getParameterTypes_added(java.lang.reflect.Member)" class="hiddenlink" target="rightframe"><b>getParameterTypes</b>
 (<code>Member</code>)</A></nobr><br>
@@ -347,7 +384,7 @@ All Additions Index
  <a href="#topheader"><font size="-2">TOP</font></a>
 <br>
 <A HREF="pkg_com.google.inject.spi.html#HasDependencies" class="hiddenlink" target="rightframe"><b><i>HasDependencies</i></b></A><br>
-<!-- Class InjectionPoint -->
+<!-- Class InjectionListener -->
 <A NAME="I"></A>
 <br><font size="+2">I</font>&nbsp;
 <a href="#A"><font size="-2">A</font></a> 
@@ -370,6 +407,8 @@ All Additions Index
 <a href="#W"><font size="-2">W</font></a> 
  <a href="#topheader"><font size="-2">TOP</font></a>
 <br>
+<A HREF="pkg_com.google.inject.spi.html#InjectionListener" class="hiddenlink" target="rightframe"><b><i>InjectionListener</i></b></A><br>
+<!-- Class InjectionPoint -->
 <A HREF="pkg_com.google.inject.spi.html#InjectionPoint" class="hiddenlink" target="rightframe"><b>InjectionPoint</b></A><br>
 <!-- Class InjectionRequest -->
 <A HREF="pkg_com.google.inject.spi.html#InjectionRequest" class="hiddenlink" target="rightframe"><b>InjectionRequest</b></A><br>
@@ -404,7 +443,7 @@ All Additions Index
  <a href="#topheader"><font size="-2">TOP</font></a>
 <br>
 <A HREF="pkg_com.google.inject.spi.html#LinkedKeyBinding" class="hiddenlink" target="rightframe"><b><i>LinkedKeyBinding</i></b></A><br>
-<!-- Constructor Message -->
+<!-- Class MembersInjector -->
 <A NAME="M"></A>
 <br><font size="+2">M</font>&nbsp;
 <a href="#A"><font size="-2">A</font></a> 
@@ -427,10 +466,12 @@ All Additions Index
 <a href="#W"><font size="-2">W</font></a> 
  <a href="#topheader"><font size="-2">TOP</font></a>
 <br>
+<A HREF="pkg_com.google.inject.html#MembersInjector" class="hiddenlink" target="rightframe"><b><i>MembersInjector</i></b></A><br>
+<!-- Class MembersInjectorLookup -->
+<A HREF="pkg_com.google.inject.spi.html#MembersInjectorLookup" class="hiddenlink" target="rightframe"><b>MembersInjectorLookup</b></A><br>
+<!-- Constructor Message -->
 <nobr><A HREF="com.google.inject.spi.Message.html#com.google.inject.spi.Message.ctor_added(java.util.List<java.lang.Object>, java.lang.String, java.lang.Throwable)" class="hiddenlink" target="rightframe"><b>Message</b>
 (<code>List&lt;Object&gt;, String, Throwable</code>)</A></nobr>&nbsp;constructor<br>
-<!-- Class ModuleWriter -->
-<A HREF="pkg_com.google.inject.spi.html#ModuleWriter" class="hiddenlink" target="rightframe"><b>ModuleWriter</b></A><br>
 <!-- Method newPrivateBinder -->
 <A NAME="N"></A>
 <br><font size="+2">N</font>&nbsp;
@@ -506,7 +547,7 @@ All Additions Index
 <a href="#W"><font size="-2">W</font></a> 
  <a href="#topheader"><font size="-2">TOP</font></a>
 <br>
-<A HREF="pkg_com.google.inject.binder.html#PrivateBinder" class="hiddenlink" target="rightframe"><b><i>PrivateBinder</i></b></A><br>
+<A HREF="pkg_com.google.inject.html#PrivateBinder" class="hiddenlink" target="rightframe"><b><i>PrivateBinder</i></b></A><br>
 <!-- Class PrivateElements -->
 <A HREF="pkg_com.google.inject.spi.html#PrivateElements" class="hiddenlink" target="rightframe"><b><i>PrivateElements</i></b></A><br>
 <!-- Class PrivateModule -->
@@ -549,12 +590,16 @@ All Additions Index
  <a href="#topheader"><font size="-2">TOP</font></a>
 <br>
 <i>requestInjection</i><br>
-&nbsp;&nbsp;<nobr><A HREF="com.google.inject.AbstractModule.html#com.google.inject.AbstractModule.requestInjection_added(java.lang.Object[])" class="hiddenlink" target="rightframe">type&nbsp;<b>
-(<code>Object[]</code>)</b>&nbsp;in&nbsp;com.google.inject.AbstractModule
+&nbsp;&nbsp;<nobr><A HREF="com.google.inject.AbstractModule.html#com.google.inject.AbstractModule.requestInjection_added(java.lang.Object)" class="hiddenlink" target="rightframe">type&nbsp;<b>
+(<code>Object</code>)</b>&nbsp;in&nbsp;com.google.inject.AbstractModule
 </A></nobr><br>
 <!-- Method requestInjection -->
-&nbsp;&nbsp;<nobr><A HREF="com.google.inject.Binder.html#com.google.inject.Binder.requestInjection_added(java.lang.Object[])" class="hiddenlink" target="rightframe">type&nbsp;<b>
-(<code>Object[]</code>)</b>&nbsp;in&nbsp;com.google.inject.Binder
+&nbsp;&nbsp;<nobr><A HREF="com.google.inject.Binder.html#com.google.inject.Binder.requestInjection_added(com.google.inject.TypeLiteral<T>, T)" class="hiddenlink" target="rightframe">type&nbsp;<b>
+(<code>TypeLiteral&lt;T&gt;, T</code>)</b>&nbsp;in&nbsp;com.google.inject.Binder
+</A></nobr><br>
+<!-- Method requestInjection -->
+&nbsp;&nbsp;<nobr><A HREF="com.google.inject.Binder.html#com.google.inject.Binder.requestInjection_added(java.lang.Object)" class="hiddenlink" target="rightframe">type&nbsp;<b>
+(<code>Object</code>)</b>&nbsp;in&nbsp;com.google.inject.Binder
 </A></nobr><br>
 <!-- Method requireBinding -->
 <i>requireBinding</i><br>
@@ -630,6 +675,12 @@ All Additions Index
 <A HREF="pkg_com.google.inject.spi.html#TypeConverter" class="hiddenlink" target="rightframe"><b><i>TypeConverter</i></b></A><br>
 <!-- Class TypeConverterBinding -->
 <A HREF="pkg_com.google.inject.spi.html#TypeConverterBinding" class="hiddenlink" target="rightframe"><b>TypeConverterBinding</b></A><br>
+<!-- Class TypeEncounter -->
+<A HREF="pkg_com.google.inject.spi.html#TypeEncounter" class="hiddenlink" target="rightframe"><b><i>TypeEncounter</i></b></A><br>
+<!-- Class TypeListener -->
+<A HREF="pkg_com.google.inject.spi.html#TypeListener" class="hiddenlink" target="rightframe"><b><i>TypeListener</i></b></A><br>
+<!-- Class TypeListenerBinding -->
+<A HREF="pkg_com.google.inject.spi.html#TypeListenerBinding" class="hiddenlink" target="rightframe"><b>TypeListenerBinding</b></A><br>
 <!-- Class UntargettedBinding -->
 <A NAME="U"></A>
 <br><font size="+2">U</font>&nbsp;
@@ -679,8 +730,5 @@ All Additions Index
 <br>
 <nobr><A HREF="com.google.inject.Binder.html#com.google.inject.Binder.withSource_added(java.lang.Object)" class="hiddenlink" target="rightframe"><b>withSource</b>
 (<code>Object</code>)</A></nobr><br>
-<!-- Method writeReplace -->
-<nobr><A HREF="com.google.inject.Key.html#com.google.inject.Key.writeReplace_added()" class="hiddenlink" target="rightframe"><b>writeReplace</b>
-()</A></nobr><br>
 </BODY>
 </HTML>

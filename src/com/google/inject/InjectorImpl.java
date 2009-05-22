@@ -81,9 +81,9 @@ class InjectorImpl implements Injector, Lookups {
     if (parent != null) {
       localContext = parent.localContext;
     } else {
-      localContext = new ThreadLocal<InternalContext[]>() {
-        protected InternalContext[] initialValue() {
-          return new InternalContext[1];
+      localContext = new ThreadLocal<Object[]>() {
+        protected Object[] initialValue() {
+          return new Object[1];
         }
       };
     }
@@ -683,7 +683,7 @@ class InjectorImpl implements Injector, Lookups {
   /**
    * Returns parameter injectors, or {@code null} if there are no parameters.
    */
-  ImmutableList<SingleParameterInjector<?>> getParametersInjectors(
+  SingleParameterInjector<?>[] getParametersInjectors(
       List<Dependency<?>> parameters, Errors errors) throws ErrorsException {
     if (parameters.isEmpty()) {
       return null;
@@ -701,7 +701,7 @@ class InjectorImpl implements Injector, Lookups {
     }
 
     errors.throwIfNewErrors(numErrorsBefore);
-    return ImmutableList.of(result);
+    return result;
   }
 
   <T> SingleParameterInjector<T> createParameterInjector(final Dependency<T> dependency,
@@ -804,23 +804,22 @@ class InjectorImpl implements Injector, Lookups {
     return getProvider(type).get();
   }
 
-  final ThreadLocal<InternalContext[]> localContext;
+  final ThreadLocal<Object[]> localContext;
 
   /** Looks up thread local context. Creates (and removes) a new context if necessary. */
   <T> T callInContext(ContextualCallable<T> callable) throws ErrorsException {
-    InternalContext[] reference = localContext.get();
+    Object[] reference = localContext.get();
     if (reference[0] == null) {
       reference[0] = new InternalContext();
       try {
-        return callable.call(reference[0]);
+        return callable.call((InternalContext)reference[0]);
       } finally {
-        // Only remove the context if this call created it.
-        localContext.remove();
+        // Only clear the context if this call created it.
+        reference[0] = null;
       }
-    }
-    else {
+    } else {
       // Someone else will clean up this context.
-      return callable.call(reference[0]);
+      return callable.call((InternalContext)reference[0]);
     }
   }
 

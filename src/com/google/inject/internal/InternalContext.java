@@ -17,7 +17,6 @@
 package com.google.inject.internal;
 
 import com.google.inject.spi.Dependency;
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -28,26 +27,18 @@ import java.util.Map;
  */
 public final class InternalContext {
 
-  private Map<Object, ConstructionContext<?>> constructionContexts;
+  private Map<Object, ConstructionContext<?>> constructionContexts = Maps.newHashMap();
   private Dependency dependency;
 
   @SuppressWarnings("unchecked")
   public <T> ConstructionContext<T> getConstructionContext(Object key) {
-    if (constructionContexts == null) {
-      constructionContexts = new HashMap<Object, ConstructionContext<?>>();
-      ConstructionContext<T> constructionContext = new ConstructionContext<T>();
+    ConstructionContext<T> constructionContext
+        = (ConstructionContext<T>) constructionContexts.get(key);
+    if (constructionContext == null) {
+      constructionContext = new ConstructionContext<T>();
       constructionContexts.put(key, constructionContext);
-      return constructionContext;
     }
-    else {
-      ConstructionContext<T> constructionContext
-          = (ConstructionContext<T>) constructionContexts.get(key);
-      if (constructionContext == null) {
-        constructionContext = new ConstructionContext<T>();
-        constructionContexts.put(key, constructionContext);
-      }
-      return constructionContext;
-    }
+    return constructionContext;
   }
 
   public Dependency getDependency() {

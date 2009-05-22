@@ -60,28 +60,40 @@ import java.util.List;
  */
 public final class Errors implements Serializable {
 
-  // TODO(kevinb): gee, ya think we might want to remove this?
-  private static final boolean allowNullsBadBadBad
-      = "I'm a bad hack".equals(System.getProperty("guice.allow.nulls.bad.bad.bad"));
+  /**
+   * The root errors object. Used to access the list of error messages.
+   */
+  private final Errors root;
 
-  private final List<Message> errors;
+  /**
+   * The parent errors object. Used to obtain the chain of source objects.
+   */
   private final Errors parent;
+
+  /**
+   * The leaf source for errors added here.
+   */
   private final Object source;
 
+  /**
+   * null unless (root == this) and error messages exist. Never an empty list.
+   */
+  private List<Message> errors; // lazy, use getErrorsForAdd()
+
   public Errors() {
-    this.errors = Lists.newArrayList();
+    this.root = this;
     this.parent = null;
     this.source = SourceProvider.UNKNOWN_SOURCE;
   }
 
   public Errors(Object source) {
-    this.errors = Lists.newArrayList();
+    this.root = this;
     this.parent = null;
     this.source = source;
   }
 
   private Errors(Errors parent, Object source) {
-    this.errors = parent.errors;
+    this.root = parent.root;
     this.parent = parent;
     this.source = source;
   }
@@ -216,6 +228,10 @@ public final class Errors implements Serializable {
       Class<? extends Annotation> annotationType, Scope scope) {
     return addMessage("Scope %s is already bound to %s. Cannot bind %s.", existing,
         annotationType, scope);
+  }
+
+  public Errors voidProviderMethod() {
+    return addMessage("Provider methods must return a value. Do not return void.");
   }
 
   public Errors missingConstantValues() {
@@ -363,17 +379,17 @@ public final class Errors implements Serializable {
 
   public Errors merge(Collection<Message> messages) {
     for (Message message : messages) {
-      errors.add(merge(message));
+      addMessage(merge(message));
     }
     return this;
   }
 
   public Errors merge(Errors moreErrors) {
-    if (moreErrors.errors == errors) {
+    if (moreErrors.root == root || moreErrors.root.errors == null) {
       return this;
     }
 
-    merge(moreErrors.errors);
+    merge(moreErrors.root.errors);
     return this;
   }
 
@@ -400,7 +416,7 @@ public final class Errors implements Serializable {
   }
 
   public boolean hasErrors() {
-    return !errors.isEmpty();
+    return root.errors != null;
   }
 
   public Errors addMessage(String messageFormat, Object... arguments) {
@@ -414,7 +430,10 @@ public final class Errors implements Serializable {
   }
 
   public Errors addMessage(Message message) {
-    errors.add(message);
+    if (root.errors == null) {
+      root.errors = Lists.newArrayList();
+    }
+    root.errors.add(message);
     return this;
   }
 
@@ -426,8 +445,11 @@ public final class Errors implements Serializable {
   }
 
   public List<Message> getMessages() {
-    List<Message> result = Lists.newArrayList(errors);
+    if (root.errors == null) {
+      return ImmutableList.of();
+    }
 
+    List<Message> result = Lists.newArrayList(root.errors);
     Collections.sort(result, new Comparator<Message>() {
       public int compare(Message a, Message b) {
         return a.getSource().compareTo(b.getSource());
@@ -477,9 +499,7 @@ public final class Errors implements Serializable {
    */
   public <T> T checkForNull(T value, Object source, Dependency<?> dependency)
       throws ErrorsException {
-    if (value != null
-        || dependency.isNullable()
-        || allowNullsBadBadBad) {
+    if (value != null || dependency.isNullable()) {
       return value;
     }
 
@@ -516,7 +536,7 @@ public final class Errors implements Serializable {
   }
 
   public int size() {
-    return errors.size();
+    return root.errors == null ? 0 : root.errors.size();
   }
 
   private static abstract class Converter<T> {
