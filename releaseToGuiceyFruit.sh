@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=2.0-beta-6
+VERSION=2.0
 mvn deploy:deploy-file -DgroupId=org.guiceyfruit \
         -DartifactId=guice-all \
         -Dversion=$VERSION \
